@@ -13,6 +13,12 @@ using KVStore = Unor4KVStore;
 
 using KVStore = STM32H7KVStore;
 
+#elif defined(ARDUINO_PORTENTA_C33)
+
+#include "kvstore/implementation/portentac33.h"
+
+using KVStore = PortentaC33KVStore;
+
 #else
 #error "KVStore not present on current platform"
 #endif
