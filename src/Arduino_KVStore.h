@@ -18,6 +18,11 @@ using KVStore = STM32H7KVStore;
 #include "kvstore/implementation/portentac33.h"
 
 using KVStore = PortentaC33KVStore;
+#elif defined(ARDUINO_ARCH_SAMD)
+
+#include "kvstore/implementation/SAMD.h"
+
+using KVStore = SAMDKVStore;
 
 #else
 #error "KVStore not present on current platform"
