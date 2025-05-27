@@ -14,8 +14,6 @@
 #include <Modem.h>
 #include <string>
 
-using namespace std;
-
 constexpr char DEFAULT_KVSTORE_NAME[] = "arduino";
 
 class Unor4KVStore: public KVStoreInterface {

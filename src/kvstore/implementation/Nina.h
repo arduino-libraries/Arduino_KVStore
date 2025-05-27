@@ -13,8 +13,6 @@
 
 #include <WiFi.h>
 
-using namespace std;
-
 const char DEFAULT_KVSTORE_NAME[] = "arduino";
 
 class NinaKVStore: public KVStoreInterface {

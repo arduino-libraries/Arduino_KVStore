@@ -11,6 +11,8 @@
 #if defined(ARDUINO_UNOR4_WIFI)
 #include "UnoR4.h"
 
+using namespace std;
+
 bool Unor4KVStore::begin(const char* name, bool readOnly, const char* partitionLabel) {
     this->name = name;
     string res = "";
