@@ -13,6 +13,8 @@
 #include "nvs.h"
 #include "nvs_flash.h"
 
+using namespace std;
+
 bool ESP32KVStore::begin(const char* name, bool readOnly, const char* partition_label) {
     if(_started){
         return false;

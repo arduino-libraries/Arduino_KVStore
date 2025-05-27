@@ -13,8 +13,6 @@
 #include <Arduino.h>
 #include <string>
 
-using namespace std;
-
 constexpr char DEFAULT_KVSTORE_NAME[] = "arduino";
 
 class ESP32KVStore: public KVStoreInterface {

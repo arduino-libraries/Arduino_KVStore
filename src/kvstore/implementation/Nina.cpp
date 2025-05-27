@@ -12,6 +12,8 @@
 
 #include "Nina.h"
 
+using namespace std;
+
 bool NinaKVStore::begin(const char* name, bool readOnly, const char* partitionLabel) {
     WiFiDrv::wifiDriverInit();
 
