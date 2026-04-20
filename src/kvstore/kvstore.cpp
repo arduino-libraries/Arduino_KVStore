@@ -77,6 +77,7 @@ size_t   KVStoreInterface::getString(const key_t& key, char* value, size_t maxLe
 
 #ifdef ARDUINO
 String KVStoreInterface::getString(const key_t& key, const String defaultValue) {
+    (void) defaultValue;
     size_t len = getBytesLength(key);
     char *str = new char[len+1];
 
