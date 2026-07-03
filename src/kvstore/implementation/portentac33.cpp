@@ -18,6 +18,7 @@ bool PortentaC33KVStore::begin() {
 }
 
 bool PortentaC33KVStore::begin(bool reformat, mbed::KVStore* store) {
+    (void) reformat;
     // bd gets allocated if a kvstore is not provided as parameter here
     // if either one of bd or kvstore is different from NULL it means that the kvstore
     // had already been called begin on

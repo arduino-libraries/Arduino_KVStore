@@ -32,6 +32,6 @@ public:
     typename KVStoreInterface::res_t getBytes(const key_t& key, uint8_t b[], size_t s) const override;
     size_t getBytesLength(const key_t& key) const override;
 private:
-    MBRBlockDevice* bd;
     mbed::KVStore* kvstore;
+    MBRBlockDevice* bd;
 };
