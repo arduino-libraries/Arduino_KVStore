@@ -16,12 +16,23 @@
 
 #include "zephyr.h"
 #include <zephyr/kvss/nvs.h>
+#include "./zephyr_migration/config.h"
+
+#if ZEPHYR_MIGRATE_TDBSTORE_AUTO
+#include "./zephyr_migration/migrate_tdbstore.h"
+#endif
 
 ZephyrKVStore::ZephyrKVStore() {
 
 }
 
 bool ZephyrKVStore::begin() {
+#if ZEPHYR_MIGRATE_TDBSTORE_AUTO
+	if (has_tdb_store() && migrate() != MIGRATE_OK) {
+		return false;
+	}
+#endif
+
 	return settings_subsys_init() == 0;
 }
 
