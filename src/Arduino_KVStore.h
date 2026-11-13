@@ -16,13 +16,13 @@
 
 using KVStore = Unor4KVStore;
 
-#elif defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
-    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)
+#elif (defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
+    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)) && defined(ARDUINO_ARCH_MBED)
 #include "kvstore/implementation/stm32h7.h"
 
 using KVStore = STM32H7KVStore;
 
-#elif defined(ARDUINO_PORTENTA_C33)
+#elif defined(ARDUINO_PORTENTA_C33) && defined(ARDUINO_ARCH_RENESAS)
 
 #include "kvstore/implementation/portentac33.h"
 
@@ -39,6 +39,11 @@ using KVStore = NinaKVStore;
 #include "kvstore/implementation/ESP32.h"
 
 using KVStore = ESP32KVStore;
+
+#elif defined(ARDUINO_ARCH_ZEPHYR)
+
+#include "kvstore/implementation/zephyr.h"
+using KVStore = ZephyrKVStore;
 
 #else
 #error "Arduino KVStore is not supported on current platform"

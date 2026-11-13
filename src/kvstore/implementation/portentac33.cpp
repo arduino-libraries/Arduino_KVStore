@@ -8,7 +8,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-#if defined(ARDUINO_PORTENTA_C33)
+#if defined(ARDUINO_PORTENTA_C33) && defined(ARDUINO_ARCH_RENESAS)
 #include "portentac33.h"
 
 PortentaC33KVStore::PortentaC33KVStore(): kvstore(nullptr), bd(nullptr) {}
@@ -97,4 +97,4 @@ size_t PortentaC33KVStore::getBytesLength(const key_t& key) const {
 bool PortentaC33KVStore::exists(const key_t& key) const {
     return getBytesLength(key) > 0;
 }
-#endif // defined(ARDUINO_PORTENTA_C33)
+#endif // defined(ARDUINO_PORTENTA_C33) && defined(ARDUINO_ARCH_RENESAS)

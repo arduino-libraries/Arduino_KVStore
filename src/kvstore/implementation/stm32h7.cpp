@@ -8,8 +8,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-#if defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
-    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)
+#if (defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) \
+    || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)) && defined(ARDUINO_ARCH_MBED)
 #include "stm32h7.h"
 
 
@@ -126,4 +126,5 @@ bool STM32H7KVStore::exists(const key_t& key) const {
     return getBytesLength(key) > 0;
 }
 
-#endif // defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) || defined(ARDUINO_OPTA) || defined(ARDUINO_GIGA)
+#endif // (defined(ARDUINO_PORTENTA_H7_M7) || defined(ARDUINO_NICLA_VISION) || defined(ARDUINO_OPTA)
+       // || defined(ARDUINO_GIGA)) ) && defined(ARDUINO_ARCH_MBED)

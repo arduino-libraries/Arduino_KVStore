@@ -30,6 +30,21 @@ jobs:
 
       matrix:
         board:
+          - fqbn: arduino:zephyr_main:opta
+            type: zephyr
+            artifact-name-suffix: arduino-zephyr_main-opta
+          - fqbn: arduino:zephyr_main:giga
+            type: zephyr
+            artifact-name-suffix: arduino-zephyr_main-giga
+          - fqbn: arduino:zephyr_main:portentah7
+            type: zephyr
+            artifact-name-suffix: arduino-zephyr_main-portentah7
+          - fqbn: arduino:zephyr_main:nicla_vision
+            type: zephyr
+            artifact-name-suffix: arduino-zephyr_main-nicla_vision
+          - fqbn: arduino:zephyr_main:portentac33
+            type: zephyr
+            artifact-name-suffix: arduino-zephyr_main-portentac33
           - fqbn: arduino:samd:mkrwifi1010
             type: nina
             artifact-name-suffix: arduino-samd-mkrwifi1010
